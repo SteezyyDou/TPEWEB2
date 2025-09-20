@@ -1,7 +1,7 @@
 # TPEWEB2
 
-Participantes:
--Josefina Cano
+Participantes:<br/>
+-Josefina Cano<br/>
 -Joaquin Manuel Ramon Fernandez
 
 Tematica:
