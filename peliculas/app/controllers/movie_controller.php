@@ -1,3 +1,4 @@
+
 <?php
 include_once 'app/models/movie_model.php';
 include_once 'app/views/movie_view.php';

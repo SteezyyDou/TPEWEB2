@@ -10,7 +10,7 @@
 
     <div class="movie-watch">
         <img src="<?= BASE_URL ?>img/watch/<?= $movie->imagen ?>.jpg" 
-             alt="<?= $movie->titulo ?>">
+            alt="<?= $movie->titulo ?>">
 
         <div class="info-watch">
             <h1><?= $movie->titulo ?></h1>

@@ -1,3 +1,4 @@
+
 <?php
  class MovieView{
     function showMovies($movies){
@@ -8,4 +9,4 @@
     function showMovie($movie){
       require_once 'templates/watchView.phtml';
     }
- }
+  }
