@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Película</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add-edit.css">
+</head>
+<body>
+    <h1>Agregar Película</h1>
+
+    <form action="<?= BASE_URL ?>admin/add" method="post">
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" id="titulo" required>
+
+        <label for="director">Director:</label>
+        <input type="text" name="director" id="director" required>
+
+        <label for="año">Año:</label>
+        <input type="number" name="año" id="año" required>
+
+        <label for="duracion">Duración (HH:MM:SS):</label>
+        <input type="text" name="duracion" id="duracion" placeholder="02:15:00" required>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+
+        <label for="genero_id">Género:</label>
+        <select name="genero_id" id="genero_id" required>
+            <?php foreach($genres as $genre): ?>
+                <option value="<?= $genre->id ?>"><?= htmlspecialchars($genre->nombre) ?></option>
+            <?php endforeach; ?>
+        </select>
+
+        <button type="submit">Agregar Película</button>
+    </form>
+
+    <p><a href="<?= BASE_URL ?>admin/listMovies">Volver</a></p>
+</body>
+</html>

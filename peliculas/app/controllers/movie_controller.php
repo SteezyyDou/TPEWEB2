@@ -1,6 +1,7 @@
 <?php
 include_once 'app/models/movie_model.php';
 include_once 'app/views/movie_view.php';
+
 class movieController {
 
     private $model;
@@ -14,13 +15,11 @@ class movieController {
     function showMovies(){
         $movies = $this->model->getMovies();
         $this->view->showMovies($movies);
-
     }
 
     function showMovie($id){
-    $movie = $this->model->getMovieById($id);
-    $this->view->showMovie($movie);
-    
-}
+         $movie = $this->model->getMovieById($id);
+         $this->view->showMovie($movie);
+   }
 
 }

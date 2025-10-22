@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fletnix</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/header.css">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">
+        <a href="<?= BASE_URL ?>home">Fletnix</a>
+    </div>
+
+    <nav class="nav-links">
+        <a href="<?= BASE_URL ?>home" class="nav-item">Home</a>
+        <a href="<?= BASE_URL ?>categories" class="nav-item">Categorías</a>
+
+        <?php if (isset($_SESSION['username'])): ?>
+            <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+                <a href="<?= BASE_URL ?>admin" class="btn-modify">Modificar</a>
+            <?php endif; ?>
+            <a href="<?= BASE_URL ?>logout" class="btn-logout">Logout</a>
+        <?php else: ?>
+            <a href="<?= BASE_URL ?>login" class="btn-login">Login</a>
+        <?php endif; ?>
+    </nav>
+</header>
+
+
+</body>
+</html>
