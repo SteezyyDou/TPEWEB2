@@ -26,4 +26,12 @@ class movieModel{
         return $movie;
 }
 
+function getMoviesByGenre($genreId) {
+    $db = $this->connect();
+    $query = $db->prepare('SELECT * FROM peliculas WHERE genero_id = ?');
+    $query->execute([$genreId]);
+    return $query->fetchAll(PDO::FETCH_OBJ);
+}
+
+
 }

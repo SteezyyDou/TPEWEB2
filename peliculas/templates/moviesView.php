@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="<?= BASE_URL?>css/styles.css">
 </head>
 <body>
+    <a href="<?= BASE_URL ?>genres" class="back-button">Ver géneros</a>
     <h1>Películas</h1>
 
     <div class="catalog">
