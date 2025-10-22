@@ -51,16 +51,11 @@ class MovieModel extends Model {
     $query->execute([$titulo, $director, $año, $descripcion, $duracion, $genero_id]);
 }
 
-
-    
-}
-
 function getMoviesByGenre($genreId) {
-    $db = $this->connect();
-    $query = $db->prepare('SELECT * FROM peliculas WHERE genero_id = ?');
+    $query = $this->db->prepare('SELECT * FROM peliculas WHERE genero_id = ?');
     $query->execute([$genreId]);
     return $query->fetchAll(PDO::FETCH_OBJ);
 }
 
-
+}
 
