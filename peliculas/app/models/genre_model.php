@@ -23,7 +23,7 @@ class GenreModel extends Model {
     public function addGenre($nombre) {
         $query = $this->db->prepare('INSERT INTO generos(nombre) VALUES (?)');
         $query->execute([$nombre]);
-        return $this->db->lastInsertId(); // Devuelve el ID correcto
+        return $this->db->lastInsertId();
     }
 
     public function updateGenre($id, $nombre) {
