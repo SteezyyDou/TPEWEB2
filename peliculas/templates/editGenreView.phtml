@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Género</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add-edit.css">
+</head>
+
+<body>
+    <h1>Editar Género</h1>
+
+    <form action="<?= BASE_URL ?>admin/updateGenre/<?= $genre->id ?>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?= $genre->id ?>">
+
+        <label for="nombre">Nombre del Género:</label>
+        <input type="text" name="nombre" id="nombre" value="<?= htmlspecialchars($genre->nombre) ?>" required>
+
+        <label for="imageToUpload">Imagen:</label>
+        <input type="file" name="imageToUpload" id="imageToUpload" accept=".jpg,image/">
+
+        <?php
+        $existingImage = "img/generos/{$genre->id}.jpg";
+        if (file_exists($existingImage)): ?>
+            <p>Imagen actual:</p>
+            <img src="<?= BASE_URL . $existingImage ?>" width="100" alt="<?= htmlspecialchars($genre->nombre) ?>">
+        <?php endif; ?>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <p><a href="<?= BASE_URL ?>genres">Volver</a></p>
+</body>
+
+</html>

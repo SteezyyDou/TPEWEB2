@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Películas del género: <?= $genre->nombre ?></title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/genreStyle.css">
+</head>
+
+<body>
+    <a href="<?= BASE_URL ?>genres" class="back-button">← Volver a generos</a>
+
+    <h1><?= $genre->nombre ?></h1>
+
+
+    <div class="catalog">
+        <?php if (!empty($movies)): ?>
+            <?php foreach ($movies as $movie):
+                $imagePath = "img/home/{$movie->id}.jpg";
+
+                if (!file_exists($imagePath)) {
+                    $imagePath = "img/notfound.jpg";
+                }
+            ?>
+                <a href="<?= BASE_URL ?>watch/<?= $movie->id ?>">
+                    <div class="movie">
+                        <img src="<?= BASE_URL . $imagePath ?>" alt="<?= $genre->nombre ?>">
+
+
+                        <div class="info">
+                            <h3><?= $movie->titulo ?></h3>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach;
+        else: ?>
+            <h1>No hay películas en este genero todavia...</h1>
+        <?php endif; ?>
+    </div>
+
+
+
+</body>
+
+</html>

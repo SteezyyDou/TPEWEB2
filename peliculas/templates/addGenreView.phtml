@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Género</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/add-edit.css">
+</head>
+
+<body>
+    <h1>Agregar Género</h1>
+
+    <form action="<?= BASE_URL ?>admin/addGenre" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre del Género:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="imageToUpload">Imagen:</label>
+        <input type="file" name="imageToUpload" id="imageToUpload" accept=".jpg,image/">
+
+        <button type="submit">Agregar Género</button>
+    </form>
+
+    </form>
+
+    <p><a href="<?= BASE_URL ?>admin/genres">Volver</a></p>
+</body>
+
+</html>

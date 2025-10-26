@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generos</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/genreStyle.css">
+</head>
+
+<body>
+
+    <div class="catalog">
+        <?php if (!empty($genres)): ?>
+            <?php foreach ($genres as $genre):
+                $imagePath = "img/generos/{$genre->id}.jpg";
+
+                if (!file_exists($imagePath)) {
+                    $imagePath = "img/notfound.jpg";
+                }
+            ?>
+                <a href="<?= BASE_URL ?>moviesByGenre/<?= $genre->id ?>">
+                    <div class="movie">
+                        <img src="<?= BASE_URL . $imagePath ?>" alt="<?= $genre->nombre ?>">
+                        <div class="info">
+                            <h3><?= $genre->nombre ?></h3>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach;
+        else: ?>
+            <h1>No hay géneros cargados...</h1>
+        <?php endif; ?>
+    </div>
+</body>
+
+</html>

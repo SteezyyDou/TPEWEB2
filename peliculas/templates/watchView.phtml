@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $movie->titulo ?> - watch</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/movieStyle.css">
+</head>
+<body>
+    <a href="<?= BASE_URL ?>" class="back-button">← Volver al catálogo</a>
+
+    <div class="movie-watch">
+        <img src="<?= BASE_URL ?>img/watch/<?= $movie->id ?>.jpg" 
+            alt="<?= $movie->titulo ?>">
+
+        <div class="info-watch">
+            <h1><?= $movie->titulo ?></h1>
+            <p><b>Descripción:</b> <?= $movie->descripcion ?></p>
+            <p><b>Género:</b> <?= $movie->genero_nombre ?></p>
+            <p><b>Año:</b> <?= $movie->año ?></p>
+            <p><b>Director:</b> <?= $movie->director ?></p>
+            <p><b>Duración:</b> <?= $movie->duracion ?> min</p>
+        </div>
+    </div>
+</body>
+</html>
+
