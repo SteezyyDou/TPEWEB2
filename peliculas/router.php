@@ -85,12 +85,11 @@ switch ($params[0]) {
 
                 case 'addGenre':
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        $controller->addGenre(); // Inserta el género
+                        $controller->addGenre();
                     } else {
-                        $controller->showAddGenreForm(); // Muestra el formulario vacío
+                        $controller->showAddGenreForm();
                     }
                     break;
-
 
                 case 'editGenre':
                     $id = $params[2] ?? null;
