@@ -12,5 +12,4 @@ Pagina de peliculas donde se puede añadir, borrar, o chequear los datos de una 
 Inicio de sesión básico: usuario: usuario, contraseña: usuario.
 Inicio de sesión como administrador: usuario: webadmin, contraseña: admin.
 
-<img width="754" height="327" alt="DER" src="https://github.com/user-attachments/assets/029cddce-e25e-48d6-9a46-a6f6d96cf3b8" />
-
+![DER](https://github.com/user-attachments/assets/3cdeaf9f-0a7f-4570-b73b-a1fc3be6f386)
