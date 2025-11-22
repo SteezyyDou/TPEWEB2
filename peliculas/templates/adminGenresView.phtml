@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar Géneros</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/admin.css">
+</head>
+<body>
+    <h1>Panel de Administración: Géneros</h1>
+    
+    <p>
+        <a href="<?= BASE_URL ?>admin/addGenre" class="btn-add">Agregar Género</a>
+    </p>
+    <?php if (!empty($error)): ?>
+    <p class="error-message"><?= $error ?></p>
+<?php endif; ?>
+
+    <?php if (!empty($genres)): ?>
+        
+
+        
+
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($genres as $genre): ?>
+                    <tr>
+                        <td><?= $genre->id ?></td>
+                        <td><?= htmlspecialchars($genre->nombre) ?></td>
+                        <td>
+                            <a href="<?= BASE_URL ?>admin/editGenre/<?= $genre->id ?>" class="btn-edit">
+                                Editar
+                            </a>
+                            <a href="<?= BASE_URL ?>admin/deleteGenre/<?= $genre->id ?>" class="btn-delete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>No hay géneros para mostrar.</p>
+    <?php endif; ?>
+
+    <p><a href="<?= BASE_URL ?>genres" class="back-button">Volver a generos</a></p>
+</body>
+</html>

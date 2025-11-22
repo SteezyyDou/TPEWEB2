@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar Películas</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/admin.css">
+</head>
+<body>
+    <h1>Panel de Administración: Películas</h1>
+
+    <p>
+        <a href="<?= BASE_URL ?>admin/add" class="btn-add">Agregar Película</a>
+    </p>
+
+    <?php if (!empty($movies)): ?>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Año</th>
+                    <th>Director</th>
+                    <th>Género</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($movies as $movie): ?>
+                    <tr>
+                        <td><?= $movie->id ?></td>
+                        <td><?= htmlspecialchars($movie->titulo) ?></td>
+                        <td><?= htmlspecialchars($movie->año) ?></td>
+                        <td><?= htmlspecialchars($movie->director) ?></td>
+                        <td><?= htmlspecialchars($movie->genero_nombre ?? '') ?></td>
+                        <td>
+                            <a href="<?= BASE_URL ?>admin/edit/<?= $movie->id ?>" class="btn-edit">
+                                Editar
+                            </a>
+                            |
+                            <a href="<?= BASE_URL ?>admin/delete/<?= $movie->id ?>"
+                               onclick="return confirm('¿Seguro que querés eliminar esta película?')"
+                               class="btn-delete">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>No hay películas para mostrar.</p>
+    <?php endif; ?>
+
+    <p><a href="<?= BASE_URL ?>home" class="back-button">Volver al Home</a></p>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+.back-button {
+    display: inline-block;
+    margin: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.catalog {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.catalog::-webkit-scrollbar {
+    height: 8px;
+}
+
+.catalog::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 4px;
+}

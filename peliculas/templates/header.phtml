@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fletnix</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/header.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="<?= BASE_URL ?>home">Fletnix</a>
+        </div>
+
+        <nav class="nav-links">
+            <?php
+            $currentAction = $_GET['action'] ?? 'home';
+            ?>
+
+            <?php if (isset($_SESSION['username'])): ?>
+
+                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+                    <?php if (str_contains($currentAction, 'genre')): ?>
+                        <a href="<?= BASE_URL ?>home" class="nav-item">Home</a>
+                        <a href="<?= BASE_URL ?>admin/genres" class="btn-modify">Modificar géneros</a>
+                    <?php else: ?>
+                        <a href="<?= BASE_URL ?>genres" class="nav-item">Categorías</a>
+                        <a href="<?= BASE_URL ?>admin" class="btn-modify">Modificar películas</a>
+                    <?php endif; ?>
+
+                <?php else: ?> <!-- Usuario normal -->
+                    <?php if (str_contains($currentAction, 'genre')): ?>
+                        <a href="<?= BASE_URL ?>home" class="nav-item">Home</a>
+                    <?php else: ?>
+                        <a href="<?= BASE_URL ?>genres" class="nav-item">Categorías</a>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+                <a href="<?= BASE_URL ?>logout" class="btn-logout">Logout</a>
+
+            <?php else: ?>
+                <a href="<?= BASE_URL ?>login" class="btn-login">Login</a>
+            <?php endif; ?>
+
+
+        </nav>
+    </header>
+
+
+</body>
+
+</html>
