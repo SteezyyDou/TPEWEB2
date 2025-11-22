@@ -35,6 +35,7 @@ class GenreModel extends Model {
         $query = $this->db->prepare("DELETE FROM generos WHERE id = ?");
         $query->execute([$id]);
     }
+<<<<<<< HEAD
 
     public function hasMovies($genreId) {
         $query = $this->db->prepare('SELECT COUNT(*) as total FROM peliculas WHERE genero_id = ?');
@@ -43,4 +44,6 @@ class GenreModel extends Model {
         return $result->total > 0;
     }
 
+=======
+>>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
 }
