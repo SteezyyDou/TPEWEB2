@@ -11,7 +11,6 @@ class AdminController {
     function __construct(){
         $this->view = new AdminView();
         $this->model = new MovieModel();
-<<<<<<< HEAD
 
         require_once 'app/models/genre_model.php';
         require_once 'app/views/genre_view.php';
@@ -21,10 +20,6 @@ class AdminController {
     }
 
 
-=======
-    }
-
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
     function listMovies(){
         $movies = $this->model->getMovies();
         $this->view->listMovies($movies);
@@ -104,22 +99,12 @@ class AdminController {
         exit;
     }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
     public function showAddGenreForm(){
         require_once 'app/views/admin_view.php';
         $view = new AdminView();
         $view->showAddGenreForm();
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
     public function editGenre($id_or_object){
         require_once 'app/models/genre_model.php';
         $genreModel = new GenreModel();
@@ -166,18 +151,13 @@ class AdminController {
     }
 
 
-<<<<<<< HEAD
     public function listGenresAdmin($error = null){
-=======
-    public function listGenresAdmin(){
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
         require_once 'app/models/genre_model.php';
         $genreModel = new GenreModel();
         $genres = $genreModel->getAllGenres();
 
         require_once 'app/views/admin_view.php';
         $view = new AdminView();
-<<<<<<< HEAD
         $view->listGenresAdmin($genres, $error);
     }
 
@@ -207,25 +187,4 @@ class AdminController {
         header("Location: " . BASE_URL . "admin/genres");
         exit;
     }
-=======
-        $view->listGenresAdmin($genres);
-    }
-
-    public function deleteGenre($id) {
-    require_once 'app/models/genre_model.php';
-    $genreModel = new GenreModel();
-
-    $genreModel->deleteGenre($id);
-
-    foreach (glob("img/generos/{$id}.*") as $file) {
-        if (file_exists($file)) {
-            unlink($file);
-        }
-    }
-
-    header("Location: " . BASE_URL . "admin/genres");
-    exit;
-}
-
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
 }

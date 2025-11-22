@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 7bbd3ff5bd5239ab7c3dfbd189faf5137bafb75f
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
